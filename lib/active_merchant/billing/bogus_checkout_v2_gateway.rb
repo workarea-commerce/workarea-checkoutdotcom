@@ -7,7 +7,7 @@ module ActiveMerchant
       def verify(paysource, options = {})
         case normalize(paysource)
         when /1$/
-          Response.new(true, SUCCESS_MESSAGE, { card: { id: 'card_123', customerId: 'cust_123' } }, test: true, authorization: AUTHORIZATION)
+          Response.new(true, SUCCESS_MESSAGE, { "card" => { "id" => "111", "customerId" => "cust_123" } }, test: true, authorization: AUTHORIZATION)
         when /2$/
           Response.new(false, FAILURE_MESSAGE, { error: FAILURE_MESSAGE }, test: true, error_code: STANDARD_ERROR_CODE[:processing_error])
         else

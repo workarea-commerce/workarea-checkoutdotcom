@@ -1,0 +1,34 @@
+module Workarea
+  decorate Payment::Purchase::CreditCardTest, with: :checkoutdotcom do
+    def payment
+      @payment ||= create_payment(profile: create_payment_profile)
+    end
+
+    def tender
+      @tender ||=
+        begin
+          payment.set_address(first_name: 'Ben', last_name: 'Crouse')
+          create_order(id: payment.id, email: 'bclams@workarea.com')
+
+          payment.set_address(
+            first_name: 'Ben',
+            last_name: 'Crouse',
+            street: '22 s 3rd st',
+            city: 'Philadelphia',
+            region: 'PA',
+            country: Country['US'],
+            postal_code: '19106'
+          )
+
+          payment.build_credit_card(
+            number: 1,
+            month: 1,
+            year: Time.current.year + 1,
+            cvv: 999
+          )
+
+          payment.credit_card
+        end
+    end
+  end
+end

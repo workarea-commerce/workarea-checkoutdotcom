@@ -1,0 +1,27 @@
+module Workarea
+  decorate Payment::RefundTest, with: :checkoutdotcom do
+    def setup_payment
+      payment.set_address(
+        first_name: 'Ben',
+        last_name: 'Crouse',
+        street: '22 S. 3rd St.',
+        city: 'Philadelphia',
+        region: 'PA',
+        postal_code: '19106',
+        country: 'US',
+        phone_number: '2159251800'
+      )
+
+      payment.set_store_credit
+      payment.set_credit_card(
+        number: '1',
+        month: 1,
+        year: Time.current.year + 1,
+        cvv: '999',
+        amount: 5.to_m
+      )
+
+      create_order(id: payment.id, email: 'bclams@weblinc.com')
+    end
+  end
+end
