@@ -1,7 +1,29 @@
-Workarea Checkoutdotcom
+Workarea Checkout.com Payment Processor
 ================================================================================
 
-Checkoutdotcom plugin for the Workarea platform.
+Checkout.com payment processor integration for credit cards.
+
+The plugin supports:
+
+1. Tokenization
+2. Authorization
+3. Purchase (auth with capture)
+4. Refund
+
+Tokenization is done via a $0 dollar authorization, be sure to check that this is allowed by the financial institution being used by Checkout.com
+
+
+Installation
+--------------------------------------------------------------------------------
+
+Testing accounts can be created for free at https://www.checkout.com/
+
+Once an account is provisioned the secret key will need to be installed into the host applications secrets file:
+
+    checkoutdotcom:
+      secret_key: sk_test_XXXXXXX
+
+The secret key can be found in the Business Name settings in the administration panel in the Checkout.com hub.
 
 Getting Started
 --------------------------------------------------------------------------------

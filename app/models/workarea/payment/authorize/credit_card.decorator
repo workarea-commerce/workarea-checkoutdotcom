@@ -1,0 +1,42 @@
+module Workarea
+  decorate Payment::Authorize::CreditCard, with: :checkoutdotcom do
+    decorated do
+      delegate :address, to: :tender
+    end
+
+    private
+
+    def transaction_options
+      options =  {
+        order_id: order.id,
+        products: order_items,
+        billing_address: {
+          address1: address.street,
+          address2: address.street_2,
+          city: address.city,
+          state: address.region,
+          country: address.country.alpha2,
+          zip: address.postal_code
+        }
+      }
+
+      if profile.gateway_id.present?
+        options.merge!(customer_id: profile.gateway_id)
+      end
+    end
+
+    def order
+      @order ||=  Workarea::Order.find(tender.payment.id)
+    end
+
+    def order_items
+      order.items.map do |oi|
+        {
+          name: oi.sku,
+          quantity: oi.quantity,
+          price: oi.total_price.to_s
+        }
+      end
+    end
+  end
+end

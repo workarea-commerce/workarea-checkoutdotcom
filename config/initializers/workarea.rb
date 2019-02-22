@@ -1,3 +1,5 @@
 Workarea.configure do |config|
-  # Add custom configuration here
+  config.run_credit_card_refund_tests = true
 end
+
+Workarea::Checkoutdotcom.auto_initialize_gateway

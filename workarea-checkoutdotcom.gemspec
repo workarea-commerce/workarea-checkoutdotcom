@@ -9,10 +9,10 @@ Gem::Specification.new do |s|
   s.version     = Workarea::Checkoutdotcom::VERSION
   s.authors     = ["Jeff Yucis"]
   s.email       = ["jyucis@weblinc.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Checkoutdotcom."
-  s.description = "TODO: Description of Checkoutdotcom."
-  
+  s.homepage    = "https://homebase.weblinc.com"
+  s.summary     = "Checkout.com payment processor."
+  s.description = "Checkout.com payment integration."
+
   s.files = `git ls-files`.split("\n")
 
   s.add_dependency 'workarea', '~> 3.x'
