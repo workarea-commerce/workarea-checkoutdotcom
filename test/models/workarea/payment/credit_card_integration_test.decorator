@@ -1,0 +1,59 @@
+if Workarea::VERSION::MAJOR == 3 && Workarea::VERSION::MINOR >= 2
+
+  module Workarea
+    decorate Payment::CreditCardIntegrationTest, with: :checkoutdotcom do
+      decorated do
+        include CheckoutdotcomGatewayVCRConfig
+      end
+
+      def test_purchase_void
+        skip 'Voiding a purchase operation is no supported'
+      end
+
+      private
+
+        def payment
+          @payment ||=
+            begin
+              order = create_order
+              profile = create_payment_profile
+              create_payment(
+                id: order.id,
+                profile_id: profile.id,
+                address: {
+                  first_name: 'Ben',
+                  last_name: 'Crouse',
+                  street: '22 s. 3rd st.',
+                  city: 'Philadelphia',
+                  region: 'PA',
+                  postal_code: '19106',
+                  country: Country['US']
+                }
+              )
+            end
+        end
+
+        def tender
+          @tender ||=
+            begin
+              payment.set_address(first_name: 'Ben', last_name: 'Crouse')
+
+              payment.build_credit_card(
+                number: 4242424242424242,
+                month: 1,
+                year: Time.current.year + 1,
+                cvv: 100,
+                amount: 5.to_m
+              )
+
+              payment.credit_card
+            end
+        end
+
+        def order
+          @order = create_order(payment.id)
+        end
+    end
+  end
+
+end

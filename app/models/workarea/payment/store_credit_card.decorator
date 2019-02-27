@@ -1,0 +1,18 @@
+module Workarea
+  decorate Payment::StoreCreditCard, with: :checkoutdotcom do
+    def perform!
+      return true if @credit_card.token.present?
+
+      response = handle_active_merchant_errors do
+        gateway.verify(@credit_card.to_active_merchant, email: @credit_card.profile.email)
+      end
+
+      @credit_card.token = response.params["card"]["id"]
+
+      # save the customerItomer ID on the profile gateway id field for use in subsequent orders
+      @credit_card.profile.gateway_id = response.params["card"]["customerId"]
+
+      response.success?
+    end
+  end
+end

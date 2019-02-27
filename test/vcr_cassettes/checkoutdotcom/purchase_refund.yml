@@ -1,0 +1,263 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.checkout.com/api2/v2/charges/card
+    body:
+      encoding: UTF-8
+      string: '{"autoCapture":"n","value":"0","trackId":null,"currency":"USD","descriptor":{},"card":{"name":"Ben
+        Crouse","number":"4242424242424242","cvv":100,"expiryYear":"2020","expiryMonth":"01"},"email":"user@workarea.com","transactionIndicator":1}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Authorization:
+      - sk_test_c4a2323c-3e03-4c02-9988-2906f466b8b5
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Feb 2019 16:56:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1055'
+      Connection:
+      - close
+      Set-Cookie:
+      - AWSALB=3HAfyBiAV2UI13Jvlujj6rXKJHty9Z6OaQJFkzZWTOTMTD8qsvPMbob2YRcJ0+8nRyfrEly0eg7MyoTiVSmZWfh1aJWdbCMqbCBBLMqjIXTbF5A8Irds45iFPo/F;
+        Expires=Fri, 01 Mar 2019 16:56:30 GMT; Path=/
+      Server:
+      - Reblaze Secure Web Gateway
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Product:
+      - Gateway
+      Version:
+      - 3.25.8
+      Request-Id:
+      - 796228e4-0314-4c18-aa0f-af3a7b53bbf3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin,X-Requested-With,Content-Type,Accept,X-AuthToken,Access-Control-Request-Method,Access-Control-Allow-Methods,Access-Control-Request-Headers,authorization,X_Auth_Credentials
+      Access-Control-Allow-Methods:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Method:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Headers:
+      - authorization
+    body:
+      encoding: UTF-8
+      string: '{"id":"charge_test_BE6F198E243W66FF4D97","liveMode":false,"created":"2019-02-22T16:56:30Z","value":0,"currency":"USD","trackId":null,"description":null,"email":"user@workarea.com","chargeMode":1,"transactionIndicator":1,"customerIp":null,"responseMessage":"Approved","responseAdvancedInfo":"Approved","responseCode":"10000","status":"Card
+        Verified","authCode":"660857","isCascaded":false,"autoCapture":"N","autoCapTime":0.0,"card":{"customerId":"cust_6E3774DC-51F9-492A-A442-ADB96774DA78","expiryMonth":"01","expiryYear":"2020","billingDetails":null,"id":"card_EDD286C1-E6C8-4466-84A8-BE7062007D77","last4":"4242","bin":"424242","paymentMethod":"Visa","fingerprint":"A24ADA27CDDFF03B3607A0E4EA30E189F84B198ABDB346E39C3619982E7474AD","name":"Ben
+        Crouse","cvvCheck":"Y","avsCheck":"S"},"riskCheck":true,"customerPaymentPlans":null,"metadata":{},"shippingDetails":{"addressLine1":null,"addressLine2":null,"postcode":null,"country":null,"city":null,"state":null,"phone":{}},"products":[],"udf1":null,"udf2":null,"udf3":null,"udf4":null,"udf5":null,"eci":"05"}'
+    http_version: 
+  recorded_at: Fri, 22 Feb 2019 16:56:31 GMT
+- request:
+    method: post
+    uri: https://sandbox.checkout.com/api2/v2/charges/card
+    body:
+      encoding: UTF-8
+      string: '{"autoCapture":"n","value":"500","trackId":"97BFF7A568","currency":"USD","descriptor":{},"cardId":"card_EDD286C1-E6C8-4466-84A8-BE7062007D77","customerId":"cust_6E3774DC-51F9-492A-A442-ADB96774DA78","transactionIndicator":1}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Authorization:
+      - sk_test_c4a2323c-3e03-4c02-9988-2906f466b8b5
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Feb 2019 16:56:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1165'
+      Connection:
+      - close
+      Set-Cookie:
+      - AWSALB=P9jZSagcUr4YN3AHEjSiXch6FnDMvrNF/4xIQ7NbKKRZ1rOOflvtN43lqlKJEaEiuVD8NIGYzU20b2qyJL7RNM08h+/uq5HTvw71B8PdVhFaSYaX6sKrDY9vKhdN;
+        Expires=Fri, 01 Mar 2019 16:56:31 GMT; Path=/
+      Server:
+      - Reblaze Secure Web Gateway
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Product:
+      - Gateway
+      Version:
+      - 3.25.8
+      Request-Id:
+      - a3e8cafb-7fbd-479b-bef5-68c45a1a2e03
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin,X-Requested-With,Content-Type,Accept,X-AuthToken,Access-Control-Request-Method,Access-Control-Allow-Methods,Access-Control-Request-Headers,authorization,X_Auth_Credentials
+      Access-Control-Allow-Methods:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Method:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Headers:
+      - authorization
+    body:
+      encoding: UTF-8
+      string: '{"id":"charge_test_EE7F198E243I66FF4D98","liveMode":false,"created":"2019-02-22T16:56:31Z","value":500,"currency":"USD","trackId":"97BFF7A568","description":null,"email":"user@workarea.com","chargeMode":1,"transactionIndicator":1,"customerIp":null,"responseMessage":"Approved","responseAdvancedInfo":"Approved","responseCode":"10000","status":"Authorised","authCode":"878975","isCascaded":false,"autoCapture":"N","autoCapTime":0.0,"card":{"customerId":"cust_6E3774DC-51F9-492A-A442-ADB96774DA78","expiryMonth":"01","expiryYear":"2020","billingDetails":{"addressLine1":null,"addressLine2":null,"postcode":null,"country":null,"city":null,"state":null,"phone":{}},"id":"card_EDD286C1-E6C8-4466-84A8-BE7062007D77","last4":"4242","bin":"424242","paymentMethod":"Visa","fingerprint":"A24ADA27CDDFF03B3607A0E4EA30E189F84B198ABDB346E39C3619982E7474AD","name":"Ben
+        Crouse","cvvCheck":"","avsCheck":"S"},"riskCheck":true,"customerPaymentPlans":null,"metadata":{},"shippingDetails":{"addressLine1":null,"addressLine2":null,"postcode":null,"country":null,"city":null,"state":null,"phone":{}},"products":[],"udf1":null,"udf2":null,"udf3":null,"udf4":null,"udf5":null,"eci":"05"}'
+    http_version: 
+  recorded_at: Fri, 22 Feb 2019 16:56:32 GMT
+- request:
+    method: post
+    uri: https://sandbox.checkout.com/api2/v2/charges/charge_test_EE7F198E243I66FF4D98/capture
+    body:
+      encoding: UTF-8
+      string: '{"value":"500","trackId":"97BFF7A568","currency":"USD","descriptor":{}}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Authorization:
+      - sk_test_c4a2323c-3e03-4c02-9988-2906f466b8b5
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Feb 2019 16:56:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '441'
+      Connection:
+      - close
+      Set-Cookie:
+      - AWSALB=Sb8xjh6dOwaTHfV/SvoFuXUMtSE9Q14JhaHKQuvSnAkUK775DgS+7x5YdqLLsB9sDbgun1AuNZdgh4RJvZDayjtN0XVDoeZWDJOpS+88pdfKTry7u/pvwfSJ9Izw;
+        Expires=Fri, 01 Mar 2019 16:56:32 GMT; Path=/
+      Server:
+      - Reblaze Secure Web Gateway
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Product:
+      - Gateway
+      Version:
+      - 3.25.8
+      Request-Id:
+      - 6a0facde-cc63-4b4f-9195-56061d30bf6c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin,X-Requested-With,Content-Type,Accept,X-AuthToken,Access-Control-Request-Method,Access-Control-Allow-Methods,Access-Control-Request-Headers,authorization,X_Auth_Credentials
+      Access-Control-Allow-Methods:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Method:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Headers:
+      - authorization
+    body:
+      encoding: UTF-8
+      string: '{"id":"charge_test_0E4F198E243Z66FF4D99","originalId":"charge_test_EE7F198E243I66FF4D98","liveMode":false,"created":"2019-02-22T16:56:32Z","value":500,"currency":"USD","trackId":"97BFF7A568","description":null,"chargeMode":1,"responseMessage":"Approved","responseAdvancedInfo":"Approved","responseCode":"10000","status":"Captured","hasChargeback":"N","metadata":null,"products":[],"udf1":null,"udf2":null,"udf3":null,"udf4":null,"udf5":null}'
+    http_version: 
+  recorded_at: Fri, 22 Feb 2019 16:56:33 GMT
+- request:
+    method: post
+    uri: https://sandbox.checkout.com/api2/v2/charges/charge_test_0E4F198E243Z66FF4D99/refund
+    body:
+      encoding: UTF-8
+      string: '{"value":"500","trackId":null,"currency":"USD","descriptor":{},"email":"unspecified@example.com"}'
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Authorization:
+      - sk_test_c4a2323c-3e03-4c02-9988-2906f466b8b5
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Feb 2019 16:56:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '441'
+      Connection:
+      - close
+      Set-Cookie:
+      - AWSALB=tlz1u3QxhCzwv2FGZ/eDAdOUrrxy/2+TxU3jT8Tcx1p/LDSvJRLg/rhsM1omjBBVnlymX/IxP1y/0VFg20hY2efgsX4F9ktf7jfKPcoFn8ilwC1g/ivchjCEHeR+;
+        Expires=Fri, 01 Mar 2019 16:56:33 GMT; Path=/
+      Server:
+      - Reblaze Secure Web Gateway
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      Product:
+      - Gateway
+      Version:
+      - 3.25.8
+      Request-Id:
+      - e91775e6-9ec6-45cd-b9d1-10897a7fdbcb
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin,X-Requested-With,Content-Type,Accept,X-AuthToken,Access-Control-Request-Method,Access-Control-Allow-Methods,Access-Control-Request-Headers,authorization,X_Auth_Credentials
+      Access-Control-Allow-Methods:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Method:
+      - OPTIONS,POST,GET,PUT,DELETE
+      Access-Control-Request-Headers:
+      - authorization
+    body:
+      encoding: UTF-8
+      string: '{"id":"charge_test_EE2F198E243Y66FF4D80","originalId":"charge_test_0E4F198E243Z66FF4D99","liveMode":false,"created":"2019-02-22T16:56:34Z","value":500,"currency":"USD","trackId":"97BFF7A568","description":null,"chargeMode":1,"responseMessage":"Approved","responseAdvancedInfo":"Approved","responseCode":"10000","status":"Refunded","hasChargeback":"N","metadata":null,"products":[],"udf1":null,"udf2":null,"udf3":null,"udf4":null,"udf5":null}'
+    http_version: 
+  recorded_at: Fri, 22 Feb 2019 16:56:35 GMT
+recorded_with: VCR 2.9.3

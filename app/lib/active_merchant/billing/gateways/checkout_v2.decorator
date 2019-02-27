@@ -1,0 +1,50 @@
+module ActiveMerchant
+  decorate Billing::CheckoutV2Gateway, with: :checkoutdotcom do
+
+    def verify(credit_card, options={})
+      authorize(0, credit_card, options)
+    end
+
+    def authorize(amount, payment_method, options={})
+      post = {}
+      post[:autoCapture] = 'n'
+      add_invoice(post, amount, options)
+      add_payment_method(post, payment_method, options)
+      add_customer_data(post, options)
+      add_transaction_data(post, options)
+      commit(:authorize, post)
+    end
+
+    def add_payment_method(post, payment_method, options = {})
+
+      if payment_method.is_a?(String) && options[:customer_id].present?
+        post[:cardId] = payment_method
+        post[:customerId] = options[:customer_id]
+      else
+        post[:card] = {}
+        post[:card][:name] = payment_method.name
+        post[:card][:number] = payment_method.number
+        post[:card][:cvv] = payment_method.verification_value
+        post[:card][:expiryYear] = format(payment_method.year, :four_digits)
+        post[:card][:expiryMonth] = format(payment_method.month, :two_digits)
+      end
+    end
+
+    def add_customer_data(post, options)
+      post[:email] = options[:email] || 'unspecified@example.com' if options[:customer_id].blank?
+      post[:customerIp] = options[:ip] if options[:ip]
+      address = options[:billing_address]
+      if(address && post[:card])
+        post[:card][:billingDetails] = {}
+        post[:card][:billingDetails][:addressLine1] = address[:address1]
+        post[:card][:billingDetails][:addressLine2] = address[:address2]
+        post[:card][:billingDetails][:city] = address[:city]
+        post[:card][:billingDetails][:state] = address[:state]
+        post[:card][:billingDetails][:country] = address[:country]
+        post[:card][:billingDetails][:postcode] = address[:zip]
+        post[:card][:billingDetails][:phone] = { number: address[:phone] } unless address[:phone].blank?
+      end
+    end
+
+  end
+end
