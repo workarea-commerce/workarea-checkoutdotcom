@@ -9,7 +9,7 @@ module Workarea
     def setup_gateway
       @_old_gateway = Workarea.config.gateways.credit_card
       Workarea.config.gateways.credit_card = ActiveMerchant::Billing::CheckoutV2Gateway.new(
-        secret_key: 'sk_test_c4a2323c-3e03-4c02-9988-2906f466b8b5'
+        secret_key: 'sk_test_f4c1d728-928c-4381-bc6b-03c0888fb877'
       )
     end
 

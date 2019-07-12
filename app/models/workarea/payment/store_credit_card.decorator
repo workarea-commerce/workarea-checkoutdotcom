@@ -8,9 +8,7 @@ module Workarea
       end
 
       if response.success?
-        @credit_card.token = response.params["card"]["id"]
-        # save the customerItomer ID on the profile gateway id field for use in subsequent orders
-        @credit_card.profile.gateway_id = response.params["card"]["customerId"]
+        @credit_card.token = response.params["source"]["id"]
       end
 
       response.success?

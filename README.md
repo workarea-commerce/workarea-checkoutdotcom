@@ -23,7 +23,9 @@ Once an account is provisioned the secret key will need to be installed into the
     checkoutdotcom:
       secret_key: sk_test_XXXXXXX
 
-The secret key can be found in the Business Name settings in the administration panel in the Checkout.com hub.
+The secret key can be found in the **Channels** tab in the **Settings** section of the Checkout.com hub.
+
+Test environments must use the pre-defined test cards for successful transactions. See more information about testing here: https://docs.checkout.com/docs/testing
 
 Getting Started
 --------------------------------------------------------------------------------
