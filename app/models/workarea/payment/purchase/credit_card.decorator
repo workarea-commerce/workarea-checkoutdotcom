@@ -8,8 +8,11 @@ module Workarea
 
     def transaction_options
       options =  {
-        order_id: order.id,
-        products: order_items,
+        reference: tender.payment.id,
+        customer: {
+          email: tender.profile.email,
+          name: address.first_name + ' ' + address.last_name
+        },
         billing_address: {
           address1: address.street,
           address2: address.street_2,
@@ -19,28 +22,6 @@ module Workarea
           zip: address.postal_code
         }
       }
-
-      # Checkout.com accepts either the customer ID
-      # or the email for recuring charges
-      # Im using the customer ID to acount for
-      # regeistered users changing their email address.
-      if profile.gateway_id.present?
-        options.merge(customer_id: profile.gateway_id)
-      end
-    end
-
-    def order
-      @order ||=  Workarea::Order.find(tender.payment.id)
-    end
-
-    def order_items
-      order.items.map do |oi|
-        {
-          name: oi.sku,
-          quantity: oi.quantity,
-          price: oi.total_price.to_s
-        }
-      end
     end
   end
 end

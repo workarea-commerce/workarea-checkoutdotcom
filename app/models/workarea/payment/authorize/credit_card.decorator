@@ -7,9 +7,9 @@ module Workarea
     private
 
     def transaction_options
-      options =  {
-        order_id: order.id,
-        products: order_items,
+      {
+        order_id: tender.payment.id,
+        email: tender.profile.email,
         billing_address: {
           address1: address.street,
           address2: address.street_2,
@@ -19,24 +19,6 @@ module Workarea
           zip: address.postal_code
         }
       }
-
-      if profile.gateway_id.present?
-        options.merge!(customer_id: profile.gateway_id)
-      end
-    end
-
-    def order
-      @order ||=  Workarea::Order.find(tender.payment.id)
-    end
-
-    def order_items
-      order.items.map do |oi|
-        {
-          name: oi.sku,
-          quantity: oi.quantity,
-          price: oi.total_price.to_s
-        }
-      end
     end
   end
 end
