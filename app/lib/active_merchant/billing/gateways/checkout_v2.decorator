@@ -4,7 +4,7 @@ module ActiveMerchant
       authorize(0, credit_card, options)
     end
 
-    def add_payment_method(post, payment_method)
+    def add_payment_method(post, payment_method, options)
       post[:source] = {}
       if payment_method.is_a?(String)
         post[:source][:type] = 'id'
