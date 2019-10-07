@@ -3,7 +3,6 @@
 module ActiveMerchant
   module Billing
     class BogusCheckoutV2Gateway < BogusGateway
-
       def verify(paysource, options = {})
         case normalize(paysource)
         when /1$/
@@ -14,7 +13,6 @@ module ActiveMerchant
           raise Error, error_message(paysource)
         end
       end
-
     end
   end
 end
