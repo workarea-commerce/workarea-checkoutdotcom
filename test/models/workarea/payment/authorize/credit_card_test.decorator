@@ -1,5 +1,9 @@
 module Workarea
   decorate Payment::Authorize::CreditCardTest, with: :checkoutdotcom do
+    def test_complete_does_nothing_if_gateway_storage_fails
+      skip "Storage happens post transaction"
+    end
+
     def payment
       @payment ||= create_payment(profile: create_payment_profile)
     end
