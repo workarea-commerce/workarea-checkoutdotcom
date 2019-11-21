@@ -5,132 +5,8 @@ http_interactions:
     uri: https://api.sandbox.checkout.com/payments
     body:
       encoding: UTF-8
-      string: '{"capture":false,"amount":"100","reference":null,"currency":"USD","metadata":{"udf5":"ActiveMerchant"},"source":{"type":"card","name":"Ben
-        Crouse","number":"4242424242424242","cvv":100,"expiry_year":"2020","expiry_month":"01"},"customer":{"email":"user@workarea.com"}}'
-    headers:
-      Content-Type:
-      - application/json;charset=UTF-8
-      Authorization:
-      - sk_test_f4c1d728-928c-4381-bc6b-03c0888fb877
-      Connection:
-      - close
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Content-Length:
-      - '1363'
-      Content-Type:
-      - application/json; charset=utf-8
-      Expires:
-      - "-1"
-      Location:
-      - https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse
-      Product:
-      - Gateway
-      Cko-Version:
-      - 3.31.2
-      Cko-Request-Id:
-      - b430f6f3-fa4e-4613-95a1-03a220f71e3e
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Origin,X-Requested-With,Content-Type,Accept,X-AuthToken,Access-Control-Request-Method,Access-Control-Allow-Methods,Access-Control-Request-Headers,authorization,X_Auth_Credentials
-      Access-Control-Allow-Methods:
-      - OPTIONS,POST,GET,PUT,DELETE
-      Access-Control-Request-Method:
-      - OPTIONS,POST,GET,PUT,DELETE
-      Access-Control-Request-Headers:
-      - authorization
-      Date:
-      - Fri, 12 Jul 2019 13:05:06 GMT
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"id":"pay_5udg5hvzdchuvff5ts4x34dbse","action_id":"act_5udg5hvzdchuvff5ts4x34dbse","amount":100,"currency":"USD","approved":true,"status":"Authorized","auth_code":"616718","eci":"05","scheme_id":"638284745624527","response_code":"10000","response_summary":"Approved","risk":{"flagged":false},"source":{"id":"src_kgc7xfwp5gmuze7o3cuvcuunhu","type":"card","expiry_month":1,"expiry_year":2020,"name":"Ben
-        Crouse","scheme":"Visa","last4":"4242","fingerprint":"A24ADA27CDDFF03B3607A0E4EA30E189F84B198ABDB346E39C3619982E7474AD","bin":"424242","card_type":"Credit","card_category":"Consumer","issuer":"JPMORGAN
-        CHASE BANK NA","issuer_country":"US","product_id":"A","product_type":"Visa
-        Traditional","avs_check":"S","cvv_check":"Y"},"customer":{"id":"cus_zwr2zdcuylfuhhgtk7yb7omxkq","email":"user@workarea.com","name":"Web
-        User"},"processed_on":"2019-07-12T13:05:06Z","processing":{"acquirer_transaction_id":"8138703281","retrieval_reference_number":"000616718604"},"_links":{"self":{"href":"https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse"},"actions":{"href":"https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse/actions"},"capture":{"href":"https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse/captures"},"void":{"href":"https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse/voids"}}}'
-    http_version: 
-  recorded_at: Fri, 12 Jul 2019 13:05:07 GMT
-- request:
-    method: post
-    uri: https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse/voids
-    body:
-      encoding: UTF-8
-      string: "{}"
-    headers:
-      Content-Type:
-      - application/json;charset=UTF-8
-      Authorization:
-      - sk_test_f4c1d728-928c-4381-bc6b-03c0888fb877
-      Connection:
-      - close
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 202
-      message: Accepted
-    headers:
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Content-Length:
-      - '151'
-      Content-Type:
-      - application/json; charset=utf-8
-      Expires:
-      - "-1"
-      Product:
-      - Gateway
-      Cko-Version:
-      - 3.31.2
-      Cko-Request-Id:
-      - 89e7eb58-89dc-44e3-9a4e-59458e53c37d
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Origin,X-Requested-With,Content-Type,Accept,X-AuthToken,Access-Control-Request-Method,Access-Control-Allow-Methods,Access-Control-Request-Headers,authorization,X_Auth_Credentials
-      Access-Control-Allow-Methods:
-      - OPTIONS,POST,GET,PUT,DELETE
-      Access-Control-Request-Method:
-      - OPTIONS,POST,GET,PUT,DELETE
-      Access-Control-Request-Headers:
-      - authorization
-      Date:
-      - Fri, 12 Jul 2019 13:05:07 GMT
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"action_id":"act_y5mvsiqlajtepaocay7nic6p7a","_links":{"payment":{"href":"https://api.sandbox.checkout.com/payments/pay_5udg5hvzdchuvff5ts4x34dbse"}}}'
-    http_version: 
-  recorded_at: Fri, 12 Jul 2019 13:05:08 GMT
-- request:
-    method: post
-    uri: https://api.sandbox.checkout.com/payments
-    body:
-      encoding: UTF-8
-      string: '{"capture":false,"amount":"500","reference":"039AE8FCED","currency":"USD","metadata":{"udf5":"ActiveMerchant"},"source":{"type":"id","id":"src_kgc7xfwp5gmuze7o3cuvcuunhu","billing_address":{"address_line1":"22
+      string: '{"capture":false,"amount":"500","reference":"22AD2D5D05","currency":"USD","metadata":{"udf5":"ActiveMerchant"},"source":{"type":"card","name":"Ben
+        Crouse","number":"4242424242424242","cvv":100,"expiry_year":"2020","expiry_month":"01","billing_address":{"address_line1":"22
         s. 3rd st.","city":"Philadelphia","state":"PA","country":"US","zip":"19106"}},"customer":{"email":"user@workarea.com"}}'
     headers:
       Content-Type:
@@ -150,24 +26,26 @@ http_interactions:
       code: 201
       message: Created
     headers:
+      Connection:
+      - close
+      Content-Length:
+      - '1538'
       Cache-Control:
       - no-cache
       Pragma:
       - no-cache
-      Content-Length:
-      - '1385'
       Content-Type:
       - application/json; charset=utf-8
       Expires:
       - "-1"
       Location:
-      - https://api.sandbox.checkout.com/payments/pay_njcuhwc7ypcufilwmzuly366x4
+      - https://api.sandbox.checkout.com/payments/pay_s64x52qiohiellgcuty3wy27u4
       Product:
       - Gateway
       Cko-Version:
-      - 3.31.2
+      - 3.32.9
       Cko-Request-Id:
-      - beff82ce-27f8-40ca-b46c-70f8478d35ca
+      - 7cee1844-5d44-4cba-88e0-7d160bc62f51
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -178,17 +56,28 @@ http_interactions:
       - OPTIONS,POST,GET,PUT,DELETE
       Access-Control-Request-Headers:
       - authorization
+      Accept-Ranges:
+      - bytes
       Date:
-      - Fri, 12 Jul 2019 13:05:08 GMT
-      Connection:
-      - close
+      - Tue, 19 Nov 2019 20:48:14 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-lga21920-LGA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1574196494.717258,VS0,VE500
     body:
       encoding: UTF-8
-      string: '{"id":"pay_njcuhwc7ypcufilwmzuly366x4","action_id":"act_njcuhwc7ypcufilwmzuly366x4","amount":500,"currency":"USD","approved":true,"status":"Authorized","auth_code":"307028","eci":"05","scheme_id":"638284745624527","response_code":"10000","response_summary":"Approved","risk":{"flagged":false},"source":{"id":"src_kgc7xfwp5gmuze7o3cuvcuunhu","type":"card","expiry_month":1,"expiry_year":2020,"name":"Web
-        User","scheme":"Visa","last4":"4242","fingerprint":"A24ADA27CDDFF03B3607A0E4EA30E189F84B198ABDB346E39C3619982E7474AD","bin":"424242","card_type":"Credit","card_category":"Consumer","issuer":"JPMORGAN
+      string: '{"id":"pay_s64x52qiohiellgcuty3wy27u4","action_id":"act_s64x52qiohiellgcuty3wy27u4","amount":500,"currency":"USD","approved":true,"status":"Authorized","auth_code":"581722","eci":"05","scheme_id":"121364426068054","response_code":"10000","response_summary":"Approved","risk":{"flagged":false},"source":{"id":"src_toxd2yvjsdlelieckfowkotabq","type":"card","billing_address":{"address_line1":"22
+        s. 3rd st.","city":"Philadelphia","state":"PA","zip":"19106","country":"US"},"expiry_month":1,"expiry_year":2020,"name":"Ben
+        Crouse","scheme":"Visa","last4":"4242","fingerprint":"A24ADA27CDDFF03B3607A0E4EA30E189F84B198ABDB346E39C3619982E7474AD","bin":"424242","card_type":"Credit","card_category":"Consumer","issuer":"JPMORGAN
         CHASE BANK NA","issuer_country":"US","product_id":"A","product_type":"Visa
-        Traditional","avs_check":"S","cvv_check":""},"customer":{"id":"cus_zwr2zdcuylfuhhgtk7yb7omxkq","email":"user@workarea.com","name":"Web
-        User"},"processed_on":"2019-07-12T13:05:08Z","reference":"039AE8FCED","processing":{"acquirer_transaction_id":"8138703285","retrieval_reference_number":"000307028668"},"_links":{"self":{"href":"https://api.sandbox.checkout.com/payments/pay_njcuhwc7ypcufilwmzuly366x4"},"actions":{"href":"https://api.sandbox.checkout.com/payments/pay_njcuhwc7ypcufilwmzuly366x4/actions"},"capture":{"href":"https://api.sandbox.checkout.com/payments/pay_njcuhwc7ypcufilwmzuly366x4/captures"},"void":{"href":"https://api.sandbox.checkout.com/payments/pay_njcuhwc7ypcufilwmzuly366x4/voids"}}}'
+        Traditional","avs_check":"S","cvv_check":"Y","payouts":true,"fast_funds":"d"},"customer":{"id":"cus_xwtxqa3y66euhnkwgpcwe7ijce","email":"user@workarea.com","name":"Ben
+        Crouse"},"processed_on":"2019-11-19T20:48:14Z","reference":"22AD2D5D05","processing":{"acquirer_transaction_id":"3871696070","retrieval_reference_number":"083843506557"},"_links":{"self":{"href":"https://api.sandbox.checkout.com/payments/pay_s64x52qiohiellgcuty3wy27u4"},"actions":{"href":"https://api.sandbox.checkout.com/payments/pay_s64x52qiohiellgcuty3wy27u4/actions"},"capture":{"href":"https://api.sandbox.checkout.com/payments/pay_s64x52qiohiellgcuty3wy27u4/captures"},"void":{"href":"https://api.sandbox.checkout.com/payments/pay_s64x52qiohiellgcuty3wy27u4/voids"}}}'
     http_version: 
-  recorded_at: Fri, 12 Jul 2019 13:05:08 GMT
+  recorded_at: Tue, 19 Nov 2019 20:48:14 GMT
 recorded_with: VCR 2.9.3

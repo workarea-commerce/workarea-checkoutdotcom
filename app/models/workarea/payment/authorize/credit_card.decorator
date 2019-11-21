@@ -4,6 +4,23 @@ module Workarea
       delegate :address, to: :tender
     end
 
+     def complete!
+      transaction.response = handle_active_merchant_errors do
+        gateway.authorize(
+          transaction.amount.cents,
+          tender.to_token_or_active_merchant,
+          transaction_options
+        )
+      end
+
+      if transaction.response.success? && tender.token.blank?
+        tender.token = transaction.response.params["source"]["id"]
+        tender.save!
+      end
+
+      transaction.response
+    end
+
     private
 
     def transaction_options

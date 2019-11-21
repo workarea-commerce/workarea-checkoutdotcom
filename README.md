@@ -10,8 +10,6 @@ The plugin supports:
 3. Purchase (auth with capture)
 4. Refund
 
-Tokenization is done via a $0 dollar authorization, be sure to check that this is allowed by the financial institution being used by Checkout.com
-
 
 Installation
 --------------------------------------------------------------------------------
@@ -22,6 +20,7 @@ Once an account is provisioned the secret key will need to be installed into the
 
     checkoutdotcom:
       secret_key: sk_test_XXXXXXX
+      test: true # set this to false in production.
 
 The secret key can be found in the **Channels** tab in the **Settings** section of the Checkout.com hub.
 
