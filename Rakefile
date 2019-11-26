@@ -43,6 +43,7 @@ task :release do
   system 'git push --tags'
 
   system "gem build workarea-checkoutdotcom.gemspec"
+  system "gem push workarea-checkoutdotcom-#{Workarea::Checkoutdotcom::VERSION}.gem"
   system "gem push workarea-checkoutdotcom-#{Workarea::Checkoutdotcom::VERSION}.gem --host #{host}"
   system "rm workarea-checkoutdotcom-#{Workarea::Checkoutdotcom::VERSION}.gem"
 end
